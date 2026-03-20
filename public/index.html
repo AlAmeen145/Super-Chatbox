@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Super Chatbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+  <div class="sidebar">
+    <button onclick="newChat()">+ New Chat</button>
+    <button onclick="openSettings()">Settings</button>
+    <button onclick="openImageGen()">🖼 Generate Image</button>
+    <div id="chat-list"></div>
+  </div>
+
+  <div class="chat-area">
+    <div class="header">Super Chatbox</div>
+    <div id="chat"></div>
+
+    <div class="input-area">
+      <input id="input" placeholder="Type or speak..." />
+      <button onclick="send()">Send</button>
+      <button onclick="startVoice()">🎤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div id="settings-modal" class="modal">
+  <h3>Settings</h3>
+  <label>AI Voice:
+    <select id="voice-select"></select>
+  </label>
+  <label>Theme:
+    <select id="theme-select">
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  </label>
+  <label>AI Mode:
+    <select id="mode-select">
+      <option value="basic">Basic</option>
+      <option value="premium">Premium</option>
+    </select>
+  </label>
+  <button onclick="closeSettings()">Close</button>
+</div>
+
+<!-- Image Generation Modal -->
+<div id="image-modal" class="modal">
+  <h3>Generate Image</h3>
+  <input id="image-prompt" placeholder="Describe the image..." />
+  <button onclick="generateImage()">Generate</button>
+  <div id="image-result"></div>
+  <button onclick="closeImageGen()">Close</button>
+</div>
+
+<script src="voice.js"></script>
+<script src="settings.js"></script>
+<script src="image-gen.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>
